@@ -7,3 +7,13 @@
 #greeting-container {
   margin-top: 20px;
 }
+
+h1 {
+    font-family: verdana;
+    color: blueviolet;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(26, 9, 134);
+}
