@@ -41,7 +41,7 @@ html, body {
     margin-top: -60px;
     margin-left: -60px;
 
-    animation: spin_right 5.5s linear infinite;
+    animation: spin 5.5s linear infinite;
 }
 
 #venus {
@@ -63,7 +63,7 @@ html, body {
     margin-top: -100px;
     margin-left: -100px;
 
-    animation: spin_right 10.5s linear infinite;
+    animation: spin 10.5s linear infinite;
 }
 
 #earth {
@@ -85,16 +85,40 @@ html, body {
     margin-top: -150px;
     margin-left: -150px;
 
-    animation: spin_right 21.2s linear infinite;
+    animation: spin 21.2s linear infinite;
 }
 
-@-webkit-keyframes spin_right {
+#mars {
+    top: 0%;
+    left: 50%;
+
+    width: 17px;
+    height: 17px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px crimson;
+    margin-top: -14.75px;
+    margin-left: -14.75px;
+}
+
+#mars_orbit {
+    top: 50%;
+    left: 50%;
+
+    width: 320px;
+    height: 320px;
+    margin-top: -163px;
+    margin-left: -163px;
+
+    animation: spin 25.7s linear infinite;
+}
+
+@-webkit-keyframes spin {
     100% {
         -webkit-transform: rotate(360deg);
     }
 }
 
-@-moz-keyframes sping_right {
+@-moz-keyframes spin {
     100% {
         -webkit-transform: rotate(360deg);
     }
