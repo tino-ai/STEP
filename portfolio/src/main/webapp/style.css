@@ -112,6 +112,30 @@ html, body {
     animation: spin 25.7s linear infinite;
 }
 
+#jupiter {
+    top: 0%;
+    left: 50%;
+
+    width: 31px;
+    height: 31px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px darkgoldenrod;
+    margin-top: -28.75px;
+    margin-left: -28.75px;
+}
+
+#jupiter_orbit {
+    top: 50%;
+    left: 50%;
+
+    width: 800px;
+    height: 500px;
+    margin-top: -250px;
+    margin-left: -400px;
+
+    animation: spin 60.32s linear infinite;
+}
+
 @-webkit-keyframes spin {
     100% {
         -webkit-transform: rotate(360deg);
