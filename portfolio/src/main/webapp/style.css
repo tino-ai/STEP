@@ -66,6 +66,28 @@ html, body {
     animation: spin_right 10.5s linear infinite;
 }
 
+#earth {
+    top: 0%;
+    left: 50%;
+
+    width: 19px;
+    height: 19px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px lightskyblue;
+}
+
+#earth_orbit {
+    top: 50%;
+    left: 50%;
+
+    width: 280px;
+    height: 280px;
+    margin-top: -150px;
+    margin-left: -150px;
+
+    animation: spin_right 21.2s linear infinite;
+}
+
 @-webkit-keyframes spin_right {
     100% {
         -webkit-transform: rotate(360deg);
