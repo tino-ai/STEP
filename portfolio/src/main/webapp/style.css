@@ -153,7 +153,31 @@ html, body {
     margin-top: -370px;
     margin-left: -310px;
 
-    animation: spin 110s linear infinite;
+    animation: spin 130s linear infinite;
+}
+
+#uranus {
+    top: 0%;
+    left: 50%;
+
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px powderblue;
+    margin-top: -13.75px;
+    margin-left: 5.75px;
+}
+
+#uranus_orbit {
+    top: 50%;
+    left: 50%;
+
+    width: 900px;
+    height: 900px;
+    margin-top: -400px;
+    margin-left: -400px;
+
+    animation: spin 330s linear infinite;
 }
 
 @-webkit-keyframes spin {
