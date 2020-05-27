@@ -136,6 +136,26 @@ html, body {
     animation: spin 60.32s linear infinite;
 }
 
+#saturn {
+    top: 0%;
+    left: 50%;
+
+    width: 42px;
+    height: 28px;
+}
+
+#saturn_orbit {
+    top: 50%;
+    left: 50%;
+
+    width: 750px;
+    height: 750px;
+    margin-top: -370px;
+    margin-left: -310px;
+
+    animation: spin 90s linear infinite;
+}
+
 @-webkit-keyframes spin {
     100% {
         -webkit-transform: rotate(360deg);
