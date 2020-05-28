@@ -37,3 +37,11 @@ function open_venus_modal() {
 function close_venus_modal() {
   document.querySelector('.venus_modal').style.display = 'none';
 }
+
+function open_mars_modal() {
+  document.querySelector('.mars_modal').style.display = 'flex';
+}
+
+function close_mars_modal() {
+  document.querySelector('.mars_modal').style.display = 'none';
+}

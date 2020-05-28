@@ -30,7 +30,7 @@
       </a>
     </div>
     <div class="body" id="mars_orbit">
-      <img class="body" id="mars" src="/images/mars.jpg">
+      <img class="body" id="mars" src="/images/mars.jpg" onclick="open_mars_modal()">
     </div>
     <div class="body" id="earth_orbit">   
       <img class="body" id="earth" src="/images/earth.jpg" onclick="open_earth_modal()"/>
@@ -50,7 +50,7 @@
         <p>Mercury : Secret?</p>
         <p>Venus : Past Work Experience.</p>
         <p>Earth : Favorite Pictures taken on Earth.</p>
-        <p>Mars : ...</p>
+        <p>Mars : Favorite Pictures taken of Space.</p>
         <p>Jupiter : Link to LinkedIn.</p>
         <p>Saturn : Link to GitHub.</p>
         <p>Uranus : ...</p>
@@ -78,6 +78,16 @@
         <img src="/images/google2.jpg" height="100px" width="100px">
         <p>
             I am currently a STEP intern at Google on the Rendering Team.
+      </div>
+    </div>
+    <div class="mars_modal">
+      <div class="mars_modal-content">
+        <div class="close" onclick="close_mars_modal()">+</div>
+        <img src="/images/sombrero.png" height="300px" width="300px">
+        <p>
+          This is a picture from my own observations of
+          Messier 104 also known as the Sombrero Galaxy!
+        </p>
       </div>
     </div>
   </body>

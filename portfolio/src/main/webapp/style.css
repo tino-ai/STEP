@@ -64,6 +64,28 @@
     position: relative;
 }
 
+.mars_modal {
+  position: absolute; /* Stay in place */
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  opacity: .8;
+  display: none;
+}
+
+.mars_modal-content {
+    width: 340px;
+    height: 400px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
 .earth_pics {
     width: 300px;
     height: 250px;
