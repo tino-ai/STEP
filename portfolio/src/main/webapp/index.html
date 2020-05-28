@@ -32,8 +32,8 @@
     <div class="body" id="mars_orbit">
       <img class="body" id="mars" src="/images/mars.jpg">
     </div>
-    <div class="body" id="earth_orbit">
-      <img class="body" id="earth" src="/images/earth.jpg">
+    <div class="body" id="earth_orbit">   
+      <img class="body" id="earth" src="/images/earth.jpg" onclick="open_earth_modal()"/>
     </div>
     <div class="body" id="venus_orbit">
       <img class="body" id="venus" src="/images/venus.jpg">
@@ -57,6 +57,14 @@
         <p>Saturn : Link to GitHub.</p>
         <p>Uranus : ...</p>
         <p>Neptune : ...</p>
+      </div>
+    </div>
+    <div class="earth_modal">
+      <div class="earth_modal-content">
+        <div class="close" onclick="close_earth_modal()">+</div>
+        <img class="earth_pics" src="/images/IMG_5202.JPG">
+        <img class="earth_pics" src="/images/IMG_5295.JPG">
+        <img class="earth_pics" src="/images/circlepic.jpg">
       </div>
     </div>
   </body>

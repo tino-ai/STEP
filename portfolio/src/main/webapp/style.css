@@ -21,6 +21,32 @@
     position: relative;
 }
 
+.earth_modal {
+  position: absolute; /* Stay in place */
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  display: none;
+}
+
+.earth_modal-content {
+    width: 350px;
+    height: 710px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.earth_pics {
+    width: 300px;
+    height: 250px;
+}
+
 /* The Close Button */
 .close {
     position: absolute;
@@ -89,6 +115,7 @@ h1 {
     margin-top: -11.25px;
     margin-left: -11.25px;
     box-shadow: 0 0 10px burlywood;
+    cursor: pointer;
 }
 
 #mercury_orbit {
@@ -111,6 +138,7 @@ h1 {
     height: 14px;
     border-radius: 100%;
     box-shadow: 0 0 10px darkorange;
+    cursor: pointer;
 }
 
 #venus_orbit {
@@ -145,6 +173,7 @@ h1 {
     margin-left: -150px;
 
     animation: spin 21.2s linear infinite;
+    cursor: pointer;
 }
 
 #mars {
@@ -157,6 +186,7 @@ h1 {
     box-shadow: 0 0 10px crimson;
     margin-top: -14.75px;
     margin-left: -14.75px;
+    cursor: pointer;
 }
 
 #mars_orbit {
@@ -225,6 +255,7 @@ h1 {
     box-shadow: 0 0 10px powderblue;
     margin-top: -13.75px;
     margin-left: 5.75px;
+    cursor: pointer;
 }
 
 #uranus_orbit {
@@ -249,6 +280,7 @@ h1 {
     box-shadow: 0 0 10px blue;
     margin-top: -13.75px;
     margin-left: 5.75px;
+    cursor: pointer;
 }
 
 #neptune_orbit {

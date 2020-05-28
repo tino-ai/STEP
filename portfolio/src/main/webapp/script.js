@@ -19,5 +19,13 @@ function openmodal() {
 
 
 function closemodal() {
-    document.querySelector('.modal').style.display = 'none';
+  document.querySelector('.modal').style.display = 'none';
+}
+
+function open_earth_modal() {
+  document.querySelector('.earth_modal').style.display = 'flex';
+}
+
+function close_earth_modal() {
+  document.querySelector('.earth_modal').style.display = 'none';
 }
