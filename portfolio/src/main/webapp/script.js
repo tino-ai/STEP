@@ -53,3 +53,19 @@ function open_mercury_modal() {
 function close_mercury_modal() {
   document.querySelector('.mercury_modal').style.display = 'none';
 }
+
+function open_uranus_modal() {
+  document.querySelector('.uranus_modal').style.display = 'flex';
+}
+
+function close_uranus_modal() {
+  document.querySelector('.uranus_modal').style.display = 'none';
+}
+
+function open_neptune_modal() {
+  document.querySelector('.neptune_modal').style.display = 'flex';
+}
+
+function close_neptune_modal() {
+  document.querySelector('.neptune_modal').style.display = 'none';
+}

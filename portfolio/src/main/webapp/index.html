@@ -14,10 +14,10 @@
         Start by clicking on the Sun!
     </div>
     <div class="body" id="neptune_orbit">
-      <img class="body" id="neptune" src="/images/neptune.jpg">
+      <img class="body" id="neptune" src="/images/neptune.jpg" onclick="open_neptune_modal()">
     </div>
     <div class="body" id="uranus_orbit">
-      <img class="body" id="uranus" src="/images/uranus.jpg">
+      <img class="body" id="uranus" src="/images/uranus.jpg" onclick="open_uranus_modal()">
     </div>
     <div class="body" id="saturn_orbit">
       <a href="https://github.com/tino-ai">
@@ -53,8 +53,8 @@
         <p>Mars : Favorite Pictures taken of Space.</p>
         <p>Jupiter : Link to LinkedIn.</p>
         <p>Saturn : Link to GitHub.</p>
-        <p>Uranus : ...</p>
-        <p>Neptune : ...</p>
+        <p>Uranus : My Programming Languages.</p>
+        <p>Neptune : My Hobbies.</p>
       </div>
     </div>
     <div class="earth_modal">
@@ -97,6 +97,23 @@
           Nice! You were able to click on the smallest and
           fastest moving object on your screen. Good Job!
         </p>
+      </div>
+    </div>
+    <div class="uranus_modal">
+      <div class="uranus_modal-content">
+        <div class="close" onclick="close_uranus_modal()">+</div>
+        <p>
+            Languages: C++, C, Python, 
+            HTML, CSS, Javascript, ARM Assembly
+        </p>
+      </div>
+    </div>
+    <div class="neptune_modal">
+      <div class="neptune_modal-content">
+        <div class="close" onclick="close_neptune_modal()">+</div>
+        <p>
+            My hobbies include violin, photography, pen-testing,
+            astronomy, video games, and spikeball.
       </div>
     </div>
   </body>
