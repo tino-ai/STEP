@@ -12,17 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Dont you put that evil on me Ricky Bobby!', '*Wilhem Scream*', 'So the other day... Actually this was two years ago', 'Yeet!'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+function openmodal() {
+  document.querySelector('.modal').style.display = 'flex';
+}
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+
+function closemodal() {
+    document.querySelector('.modal').style.display = 'none';
 }

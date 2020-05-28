@@ -6,15 +6,13 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-
   <body background="/images/stars.jpg">
     <h1 id="b_l">
         2020 A Space Portfolio
     </h1>
     <div id="b_l2">
-        Try and click on the planets!
+        Start by clicking on the Sun!
     </div>
-    <img class="body" id="sun" src="/images/newsun.jpg">
     <div class="body" id="neptune_orbit">
       <img class="body" id="neptune" src="/images/neptune.jpg">
     </div>
@@ -44,6 +42,22 @@
       <a href="https://github.com/tino-ai">
         <img class="body" id="mercury" src="/images/mercury.jpg">
       </a>
+    </div>
+    <img class="body" id="sun" src="/images/newsun.jpg" onclick="openmodal()"/>
+    <div id="mymodal" class="modal">
+      <div class="modal-content">
+        <div class="close" onclick="closemodal()">+</div>
+        <img class="circle_pic" src=/images/circlepic.jpg>
+        <p>Try clicking on the planets!</p>
+        <p>Mercury : Secret?</p>
+        <p>Venus : Past Work Experience.</p>
+        <p>Earth : Favorite Pictures taken on Earth.</p>
+        <p>Mars : ...</p>
+        <p>Jupiter : Link to LinkedIn.</p>
+        <p>Saturn : Link to GitHub.</p>
+        <p>Uranus : ...</p>
+        <p>Neptune : ...</p>
+      </div>
     </div>
   </body>
 </html>
