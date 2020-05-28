@@ -29,3 +29,11 @@ function open_earth_modal() {
 function close_earth_modal() {
   document.querySelector('.earth_modal').style.display = 'none';
 }
+
+function open_venus_modal() {
+  document.querySelector('.venus_modal').style.display = 'flex';
+}
+
+function close_venus_modal() {
+  document.querySelector('.venus_modal').style.display = 'none';
+}
