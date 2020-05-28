@@ -6,13 +6,115 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-
   <body background="/images/stars.jpg">
-    <img class="body" id="sun" src="/images/sunfinal.jpg">
-    <div class="body" id="mercury_orbit">
+    <h1 id="b_l">
+        2020 A Space Portfolio
+    </h1>
+    <div id="b_l2">
+        Start by clicking on the Sun!
+    </div>
+    <div class="body" id="neptune_orbit">
+      <img class="body" id="neptune" src="/images/neptune.jpg" onclick="open_neptune_modal()">
+    </div>
+    <div class="body" id="uranus_orbit">
+      <img class="body" id="uranus" src="/images/uranus.jpg" onclick="open_uranus_modal()">
+    </div>
+    <div class="body" id="saturn_orbit">
       <a href="https://github.com/tino-ai">
-        <img class="body" id="mercury" src="/images/mercury.jpg">
+        <img class="body" id="saturn" src="/images/saturn.png">
       </a>
+    </div>
+    <div class="body" id="jupiter_orbit">
+      <a href="https://www.linkedin.com/in/valentino-dore-8b7a10177">
+        <img class="body" id="jupiter" src="/images/jupiter.jpg">
+      </a>
+    </div>
+    <div class="body" id="mars_orbit">
+      <img class="body" id="mars" src="/images/mars.jpg" onclick="open_mars_modal()">
+    </div>
+    <div class="body" id="earth_orbit">   
+      <img class="body" id="earth" src="/images/earth.jpg" onclick="open_earth_modal()"/>
+    </div>
+    <div class="body" id="venus_orbit">
+      <img class="body" id="venus" src="/images/venus.jpg" onclick="open_venus_modal()">
+    </div>
+    <div class="body" id="mercury_orbit">
+      <img class="body" id="mercury" src="/images/mercury.jpg" onclick="open_mercury_modal()">
+    </div>
+    <img class="body" id="sun" src="/images/newsun.jpg" onclick="openmodal()"/>
+    <div id="mymodal" class="modal">
+      <div class="modal-content">
+        <div class="close" onclick="closemodal()">+</div>
+        <img class="circle_pic" src=/images/circlepic.jpg>
+        <p>Try clicking on the planets!</p>
+        <p>Mercury : Secret?</p>
+        <p>Venus : Past Work Experience.</p>
+        <p>Earth : Favorite Pictures taken on Earth.</p>
+        <p>Mars : Favorite Pictures taken of Space.</p>
+        <p>Jupiter : Link to LinkedIn.</p>
+        <p>Saturn : Link to GitHub.</p>
+        <p>Uranus : My Programming Languages.</p>
+        <p>Neptune : My Hobbies.</p>
+      </div>
+    </div>
+    <div class="earth_modal">
+      <div class="earth_modal-content">
+        <div class="close" onclick="close_earth_modal()">+</div>
+        <img class="earth_pics" src="/images/IMG_5202.JPG">
+        <img class="earth_pics" src="/images/IMG_5295.JPG">
+        <img class="earth_pics" src="/images/circlepic.jpg">
+      </div>
+    </div>
+    <div class="venus_modal">
+      <div class="venus_modal-content">
+        <div class="close" onclick="close_venus_modal()">+</div>
+        <img src="/images/detroit.png" height="100px" width="300px">
+        <p>
+            I have had a two year recurring summer internship through Detroit Dismantling as a software engineer.
+            I have introduced 360 degree cameras paired with virtual reality lenses so they can more efficiently 
+            complete the job, as well as coded in python, writing CSV programs to help them more effectively find 
+            what they are looking for.
+        </p>
+        <img src="/images/google2.jpg" height="100px" width="100px">
+        <p>
+            I am currently a STEP intern at Google on the Rendering Team.
+      </div>
+    </div>
+    <div class="mars_modal">
+      <div class="mars_modal-content">
+        <div class="close" onclick="close_mars_modal()">+</div>
+        <img src="/images/sombrero.png" height="300px" width="300px">
+        <p>
+          This is a picture from my own observations of
+          Messier 104 also known as the Sombrero Galaxy!
+        </p>
+      </div>
+    </div>
+    <div class="mercury_modal">
+      <div class="mercury_modal-content">
+        <div class="close" onclick="close_mercury_modal()">+</div>
+        <p>
+          Nice! You were able to click on the smallest and
+          fastest moving object on your screen. Good Job!
+        </p>
+      </div>
+    </div>
+    <div class="uranus_modal">
+      <div class="uranus_modal-content">
+        <div class="close" onclick="close_uranus_modal()">+</div>
+        <p>
+            Languages: C++, C, Python, 
+            HTML, CSS, Javascript, ARM Assembly
+        </p>
+      </div>
+    </div>
+    <div class="neptune_modal">
+      <div class="neptune_modal-content">
+        <div class="close" onclick="close_neptune_modal()">+</div>
+        <p>
+            My hobbies include violin, photography, pen-testing,
+            astronomy, video games, and spikeball.
+      </div>
     </div>
   </body>
 </html>

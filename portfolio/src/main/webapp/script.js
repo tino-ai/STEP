@@ -12,17 +12,60 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Dont you put that evil on me Ricky Bobby!', '*Wilhem Scream*', 'So the other day... Actually this was two years ago', 'Yeet!'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+function openmodal() {
+  document.querySelector('.modal').style.display = 'flex';
+}
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+
+function closemodal() {
+  document.querySelector('.modal').style.display = 'none';
+}
+
+function open_earth_modal() {
+  document.querySelector('.earth_modal').style.display = 'flex';
+}
+
+function close_earth_modal() {
+  document.querySelector('.earth_modal').style.display = 'none';
+}
+
+function open_venus_modal() {
+  document.querySelector('.venus_modal').style.display = 'flex';
+}
+
+function close_venus_modal() {
+  document.querySelector('.venus_modal').style.display = 'none';
+}
+
+function open_mars_modal() {
+  document.querySelector('.mars_modal').style.display = 'flex';
+}
+
+function close_mars_modal() {
+  document.querySelector('.mars_modal').style.display = 'none';
+}
+
+function open_mercury_modal() {
+  document.querySelector('.mercury_modal').style.display = 'flex';
+}
+
+function close_mercury_modal() {
+  document.querySelector('.mercury_modal').style.display = 'none';
+}
+
+function open_uranus_modal() {
+  document.querySelector('.uranus_modal').style.display = 'flex';
+}
+
+function close_uranus_modal() {
+  document.querySelector('.uranus_modal').style.display = 'none';
+}
+
+function open_neptune_modal() {
+  document.querySelector('.neptune_modal').style.display = 'flex';
+}
+
+function close_neptune_modal() {
+  document.querySelector('.neptune_modal').style.display = 'none';
 }
