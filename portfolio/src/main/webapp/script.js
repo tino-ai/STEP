@@ -45,3 +45,11 @@ function open_mars_modal() {
 function close_mars_modal() {
   document.querySelector('.mars_modal').style.display = 'none';
 }
+
+function open_mercury_modal() {
+  document.querySelector('.mercury_modal').style.display = 'flex';
+}
+
+function close_mercury_modal() {
+  document.querySelector('.mercury_modal').style.display = 'none';
+}
