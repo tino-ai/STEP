@@ -69,3 +69,13 @@ function open_neptune_modal() {
 function close_neptune_modal() {
   document.querySelector('.neptune_modal').style.display = 'none';
 }
+
+/**
+ * using async to fetch /data sections
+ * improves readability and simpleness
+ */
+async function getDataAsyncAwait() {
+  const response = await fetch('/data');
+  const quote = await response.text();
+  document.getElementById('data-container').innerText = quote;
+}
