@@ -15,6 +15,7 @@
 package com.google.sps.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,8 +27,29 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String quote = "Hello Tino!";
-    response.setContentType("text/html;");
-    response.getWriter().println(quote);
+    ArrayList<String> comments = new ArrayList<String>();
+    comments.add("Hi tino");
+    comments.add("i like pie");
+    comments.add("nice space");
+
+    String json = convertToJson(comments);
+
+    // Send the JSON as the response
+    response.setContentType("application/json;");
+    response.getWriter().println(json);
   }
+
+    /**
+      * Converts a data array instance into a JSON string using manual String concatentation.
+    */
+  private String convertToJson(ArrayList<String> array) {
+    String json = "";
+    json += "\"" + array.get(0) + "\"";
+    json += ", ";
+    json += "\"" + array.get(1) + "\"";
+    json += ", ";
+    json += array.get(2);
+    return json;
+  }
+
 }

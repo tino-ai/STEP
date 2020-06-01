@@ -76,6 +76,6 @@ function close_neptune_modal() {
  */
 async function getDataAsyncAwait() {
   const response = await fetch('/data');
-  const quote = await response.text();
-  document.getElementById('data-container').innerText = quote;
+  const comments = await response.text();
+  document.getElementById('data-container').innerText = comments;
 }
