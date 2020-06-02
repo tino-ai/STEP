@@ -22,6 +22,7 @@ import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.SortDirection;
 import com.google.gson.Gson;
 import java.io.IOException;
+import com.google.sps.data.Comment;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.annotation.WebServlet;
@@ -41,10 +42,14 @@ public class DataServlet extends HttpServlet {
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
 
-    List<String> comments = new ArrayList<>();
+    List<Comment> comments = new ArrayList<>();
     for (Entity entity : results.asIterable()) {
+      String name = (String) entity.getProperty("name");
       String info = (String) entity.getProperty("info");
-      comments.add(info);
+      long timestamp = (long) entity.getProperty("timestamp");
+
+      Comment comment = new Comment(name, info, timestamp);
+      comments.add(comment);
     }
 
     Gson gson = new Gson();
@@ -57,9 +62,11 @@ public class DataServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
       
     String userCommentString = request.getParameter("user-comment");
+    String userNameString = request.getParameter("user-name");
     long timestamp = System.currentTimeMillis();
 
-    Entity taskEntity = new Entity("Comment");
+    Entity taskEntity = new Entity("comment");
+    taskEntity.setProperty("name", userNameString);
     taskEntity.setProperty("info", userCommentString);
     taskEntity.setProperty("timestamp", timestamp);
 
@@ -68,16 +75,6 @@ public class DataServlet extends HttpServlet {
 
     // Redirect back to the HTML page.
     response.sendRedirect("/index.html");
-  }
-
-  /**
-   * Converts a ServerStats instance into a JSON string using the Gson library. Note: We first added
-   * the Gson library dependency to pom.xml.
-   */
-  private String convertToJsonUsingGson(ArrayList<String> comments) {
-    Gson gson = new Gson();
-    String json = gson.toJson(comments);
-    return json;
   }
 
 }
