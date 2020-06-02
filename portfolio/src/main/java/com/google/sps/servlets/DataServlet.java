@@ -14,6 +14,7 @@
 
 package com.google.sps.servlets;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.annotation.WebServlet;
@@ -24,31 +25,39 @@ import javax.servlet.http.HttpServletResponse;
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
+  
+  //our array which we will add comments to
+  ArrayList<String> comments = new ArrayList<String>();
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    ArrayList<String> comments = new ArrayList<String>();
-    comments.add("Hi tino");
-    comments.add("i like pie");
-    comments.add("nice space");
 
-    String json = convertToJson(comments);
+    String json = convertToJsonUsingGson(comments);
 
     // Send the JSON as the response
     response.setContentType("application/json;");
     response.getWriter().println(json);
   }
 
-    /**
-      * Converts a data array instance into a JSON string using manual String concatentation.
-    */
-  private String convertToJson(ArrayList<String> array) {
-    String json = "";
-    json += "\"" + array.get(0) + "\"";
-    json += ", ";
-    json += "\"" + array.get(1) + "\"";
-    json += ", ";
-    json += array.get(2);
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    // Get the input from the form.
+    String userCommentString = request.getParameter("user-comment");
+
+    //push the new comment into the array
+    comments.add(userCommentString);
+
+    // Redirect back to the HTML page.
+    response.sendRedirect("/index.html");
+  }
+
+  /**
+   * Converts a ServerStats instance into a JSON string using the Gson library. Note: We first added
+   * the Gson library dependency to pom.xml.
+   */
+  private String convertToJsonUsingGson(ArrayList<String> comments) {
+    Gson gson = new Gson();
+    String json = gson.toJson(comments);
     return json;
   }
 

@@ -118,9 +118,16 @@
     </div>
     <div id="content">
       <h1>Comments</h1>
-      <p>Click here to see a random quote:</p>
-      <button onclick="getDataAsyncAwait()">See a message!</button>
+      <p class="comments">Click here to all the comments:</p>
+      <button onclick="getDataAsyncAwait()">See the comments!</button>
       <div class="comments" id="data-container"></div>
     </div>
+    <form action="/data" method="POST">
+
+      <p class="comments">Enter a comment</p>
+      <label class="comments" for="comm">Your Comment:</label><br>
+      <input type="text" name="user-comment">
+      <input type="submit" />
+    </form>
   </body>
 </html>
