@@ -82,8 +82,50 @@ function close_comments() {
  * using async to fetch /data sections
  * improves readability and simpleness
  */
-async function getDataAsyncAwait() {
-  const response = await fetch('/data');
-  const comments = await response.text();
-  document.getElementById('data-container').innerText = comments;
+//async function getDataAsyncAwait() {
+//  const response = await fetch('/data');
+//  const comments = await response.text();
+//  document.getElementById('data-container').innerText = comments;
+//}
+
+/** Fetches tasks from the server and adds them to the DOM. */
+function load_comments() {
+  fetch('/data').then(response => response.json()).then((comments) => {
+    const commentListElement = document.getElementById('comment-list');
+    comments.forEach((comment) => {
+      commentListElement.appendChild(create_CommentElement(comment));
+    })
+  });
+}
+
+/** Creates an element that represents a task, including its delete button. */
+function create_CommentElement(comment) {
+  const commentElement = document.createElement('li');
+  commentElement.className = 'comment';
+
+  const titleElement = document.createElement('span');
+  titleElement.innerText = comment.info;
+  const nameElement = document.createElement('span');
+  nameElement.innerText = comment.username;
+
+  const deleteButtonElement = document.createElement('button');
+  deleteButtonElement.innerText = 'Delete';
+  deleteButtonElement.addEventListener('click', () => {
+    delete_comment(comment);
+
+    // Remove the task from the DOM.
+    commentElement.remove();
+  });
+
+  commentElement.appendChild(nameElement);
+  commentElement.appendChild(titleElement);
+  commentElement.appendChild(deleteButtonElement);
+  return commentElement;
+}
+
+/** Tells the server to delete the task. */
+function delete_comment(comment) {
+  const params = new URLSearchParams();
+  params.append('id', comment.id);
+  fetch('/delete-data', {method: 'POST', body: params});
 }

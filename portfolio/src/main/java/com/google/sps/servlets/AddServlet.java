@@ -30,34 +30,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet that returns some example content. TODO: modify this file to handle comments data */
-@WebServlet("/data")
-public class DataServlet extends HttpServlet {
-
+/** Servlet responsible for creating new tasks. */
+@WebServlet("/add-servlet")
+public class AddServlet extends HttpServlet {
   @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+      
+    String userCommentString = request.getParameter("user-comment");
+    String userNameString = request.getParameter("user-name");
+    long timestamp = System.currentTimeMillis();
 
-    Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
+    Entity taskEntity = new Entity("Comment");
+    taskEntity.setProperty("username", userNameString);
+    taskEntity.setProperty("info", userCommentString);
+    taskEntity.setProperty("timestamp", timestamp);
 
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-    PreparedQuery results = datastore.prepare(query);
+    datastore.put(taskEntity);
 
-    List<Comment> comments = new ArrayList<>();
-    for (Entity entity : results.asIterable()) {
-      long id = entity.getKey().getId();
-      String info = (String) entity.getProperty("info");
-      String username = (String) entity.getProperty("username");
-      long timestamp = (long) entity.getProperty("timestamp");
-
-      Comment comment = new Comment(username, info, timestamp, id);
-      comments.add(comment);
-    }
-
-    Gson gson = new Gson();
-
-    response.setContentType("application/json;");
-    response.getWriter().println(gson.toJson(comments));
+    // Redirect back to the HTML page.
+    response.sendRedirect("/index.html");
   }
-
 }
-

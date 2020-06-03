@@ -16,14 +16,15 @@ package com.google.sps.data;
 
 /** An item on a todo list. */
 public final class Comment {
-
-  private final String name;
-  private final String info;
   private final long timestamp;
+  private final String info;
+  private final String username;
+  private final long id;
 
-  public Comment(String name, String info, long timestamp) {
-    this.name = name;
+  public Comment(String username, String info, long timestamp, long id) {
+    this.username = username;
     this.info = info;
     this.timestamp = timestamp;
+    this.id = id;
   }
 }
