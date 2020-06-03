@@ -70,6 +70,14 @@ function close_neptune_modal() {
   document.querySelector('.neptune_modal').style.display = 'none';
 }
 
+function open_comments() {
+  document.querySelector('.comments_modal').style.display = 'flex';
+}
+
+function close_comments() {
+  document.querySelector('.comments_modal').style.display = 'none';
+}
+
 /**
  * using async to fetch /data sections
  * improves readability and simpleness

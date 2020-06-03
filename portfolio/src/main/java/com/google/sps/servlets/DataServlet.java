@@ -14,8 +14,17 @@
 
 package com.google.sps.servlets;
 
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Query.SortDirection;
+import com.google.gson.Gson;
 import java.io.IOException;
+import com.google.sps.data.Comment;
 import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,29 +36,45 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    ArrayList<String> comments = new ArrayList<String>();
-    comments.add("Hi tino");
-    comments.add("i like pie");
-    comments.add("nice space");
 
-    String json = convertToJson(comments);
+    Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
 
-    // Send the JSON as the response
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    PreparedQuery results = datastore.prepare(query);
+
+    List<Comment> comments = new ArrayList<>();
+    for (Entity entity : results.asIterable()) {
+      String name = (String) entity.getProperty("name");
+      String info = (String) entity.getProperty("info");
+      long timestamp = (long) entity.getProperty("timestamp");
+
+      Comment comment = new Comment(name, info, timestamp);
+      comments.add(comment);
+    }
+
+    Gson gson = new Gson();
+
     response.setContentType("application/json;");
-    response.getWriter().println(json);
+    response.getWriter().println(gson.toJson(comments));
   }
 
-    /**
-      * Converts a data array instance into a JSON string using manual String concatentation.
-    */
-  private String convertToJson(ArrayList<String> array) {
-    String json = "";
-    json += "\"" + array.get(0) + "\"";
-    json += ", ";
-    json += "\"" + array.get(1) + "\"";
-    json += ", ";
-    json += array.get(2);
-    return json;
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+      
+    String userCommentString = request.getParameter("user-comment");
+    String userNameString = request.getParameter("user-name");
+    long timestamp = System.currentTimeMillis();
+
+    Entity taskEntity = new Entity("comment");
+    taskEntity.setProperty("name", userNameString);
+    taskEntity.setProperty("info", userCommentString);
+    taskEntity.setProperty("timestamp", timestamp);
+
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    datastore.put(taskEntity);
+
+    // Redirect back to the HTML page.
+    response.sendRedirect("/index.html");
   }
 
 }

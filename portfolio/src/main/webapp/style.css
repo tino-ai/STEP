@@ -10,6 +10,14 @@
   display: none;
 }
 
+.comment {
+  border: thin solid black;
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+}
+
 /* Modal Content */
 .modal-content {
     width: 500px;
@@ -152,6 +160,28 @@
     position: relative;
 }
 
+.comments_modal {
+  position: absolute; /* Stay in place */
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  opacity: .8;
+  display: none;
+}
+
+.comments_modal-content {
+    width: 500px;
+    height: 600px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
 .earth_pics {
     width: 300px;
     height: 250px;
@@ -187,8 +217,8 @@ h1 {
     color: crimson;
 }
 
-.comments {
-    color: crimson;
+#comment-list {
+  list-style-type: none;
 }
 
 #b_l {
@@ -407,6 +437,18 @@ h1 {
     margin-left: -500px;
 
     animation: spin 500s linear infinite;
+}
+
+#galaxy {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px blue;
+    margin-top: -13.75px;
+    margin-left: 5.75px;
+    cursor: pointer;
+    top: 50px;
+    left: 40px;
 }
 
 @-webkit-keyframes spin {

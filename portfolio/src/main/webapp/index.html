@@ -116,11 +116,20 @@
             astronomy, video games, and spikeball.
       </div>
     </div>
-    <div id="content">
-      <h1>Comments</h1>
-      <p>Click here to see a random quote:</p>
-      <button onclick="getDataAsyncAwait()">See a message!</button>
-      <div class="comments" id="data-container"></div>
+    <div>
+      <img class="body" id="galaxy" src="/images/galaxy.jpg" onclick="open_comments(); getDataAsyncAwait();">
+    </div>
+    <div id="content" class="comments_modal">
+      <div class="comments_modal-content">
+        <div class="close" onclick="close_comments()">+</div>
+        <h2>Comments</h2>
+        <div id="data-container"></div>
+        <form action="/data" method="POST">
+          <input type="text" name="user-name" placeholder="Type your name here...">
+          <input type="text" name="user-comment" placeholder="Type your comment here...">
+          <input type="submit" />
+        </form>
+      </div>
     </div>
   </body>
 </html>
