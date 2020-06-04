@@ -39,7 +39,7 @@
       <img class="body" id="venus" src="/images/venus.jpg" onclick="open_venus_modal()">
     </div>
     <div class="body" id="mercury_orbit">
-      <img class="body" id="mercury" src="/images/mercury.jpg" onclick="open_mercury_modal()">
+      <img class="body" id="mercury" src="/images/mercury.jpg" onclick="open_mercury_modal(); create_map();">
     </div>
     <img class="body" id="sun" src="/images/newsun.jpg" onclick="openmodal()"/>
     <div id="mymodal" class="modal">
@@ -93,10 +93,7 @@
     <div class="mercury_modal">
       <div class="mercury_modal-content">
         <div class="close" onclick="close_mercury_modal()">+</div>
-        <p>
-          Nice! You were able to click on the smallest and
-          fastest moving object on your screen. Good Job!
-        </p>
+        <div id="map"></div>
       </div>
     </div>
     <div class="uranus_modal">
