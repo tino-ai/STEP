@@ -20,12 +20,12 @@
       <img class="body" id="uranus" src="/images/uranus.jpg" onclick="open_uranus_modal()">
     </div>
     <div class="body" id="saturn_orbit">
-      <a href="https://github.com/tino-ai">
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/tino-ai">
         <img class="body" id="saturn" src="/images/saturn.png">
       </a>
     </div>
     <div class="body" id="jupiter_orbit">
-      <a href="https://www.linkedin.com/in/valentino-dore-8b7a10177">
+      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/valentino-dore-8b7a10177">
         <img class="body" id="jupiter" src="/images/jupiter.jpg">
       </a>
     </div>
@@ -39,7 +39,7 @@
       <img class="body" id="venus" src="/images/venus.jpg" onclick="open_venus_modal()">
     </div>
     <div class="body" id="mercury_orbit">
-      <img class="body" id="mercury" src="/images/mercury.jpg" onclick="open_mercury_modal()">
+      <img class="body" id="mercury" src="/images/mercury.jpg" onclick="open_mercury_modal(); create_map();">
     </div>
     <img class="body" id="sun" src="/images/newsun.jpg" onclick="openmodal()"/>
     <div id="mymodal" class="modal">
@@ -93,10 +93,7 @@
     <div class="mercury_modal">
       <div class="mercury_modal-content">
         <div class="close" onclick="close_mercury_modal()">+</div>
-        <p>
-          Nice! You were able to click on the smallest and
-          fastest moving object on your screen. Good Job!
-        </p>
+        <div id="map"></div>
       </div>
     </div>
     <div class="uranus_modal">
@@ -117,18 +114,19 @@
       </div>
     </div>
     <div>
-      <img class="body" id="galaxy" src="/images/galaxy.jpg" onclick="open_comments(); getDataAsyncAwait();">
+      <img class="body" id="galaxy" src="/images/galaxy.jpg" onclick="open_comments(); load_comments();">
     </div>
     <div id="content" class="comments_modal">
       <div class="comments_modal-content">
         <div class="close" onclick="close_comments()">+</div>
         <h2>Comments</h2>
         <div id="data-container"></div>
-        <form action="/data" method="POST">
+        <form action="/add-servlet" method="POST">
           <input type="text" name="user-name" placeholder="Type your name here...">
           <input type="text" name="user-comment" placeholder="Type your comment here...">
           <input type="submit" />
         </form>
+        <ul id="comment-list"></ul>
       </div>
     </div>
   </body>
