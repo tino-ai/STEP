@@ -91,6 +91,14 @@ function close_comments() {
   document.querySelector('.comments_modal').style.display = 'none';
 }
 
+function open_translate() {
+  document.querySelector('.translate_modal').style.display = 'flex';
+}
+
+function close_translate() {
+  document.querySelector('.translate_modal').style.display = 'none';
+}
+
 /** Fetches tasks from the server and adds them to the DOM. */
 function load_comments() {
   fetch('/data').then(response => response.json()).then((comments) => {
@@ -135,7 +143,37 @@ function delete_comment(comment) {
 
 /** Creates a map and adds it to the page. */
 function create_map() {
-  const map = new google.maps.Map(
-      document.getElementById('map'),
-      {center: {lat: 37.422, lng: -122.084}, zoom: 16});
+  // The location of Uluru
+  var detroit = {lat: 42.331, lng: -83.046};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: detroit});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: detroit, map: map});
+}
+
+function requestTranslation() {
+    //grabs the language and text to translate
+  const text = document.getElementById('text').value;
+  const languageCode = document.getElementById('language').value;
+
+  const resultContainer = document.getElementById('result');
+  resultContainer.innerText = 'Loading...';
+
+  const params = new URLSearchParams();
+  params.append('text', text);
+  params.append('languageCode', languageCode);
+
+ //POST to the translation servlet
+  fetch('/translate', {
+      method: 'POST',
+      body: params
+      }).then(response => response.text())
+      .then((translatedMessage) => {
+        resultContainer.innerText = translatedMessage;
+        });
+}
+
+function translate() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }

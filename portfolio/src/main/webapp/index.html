@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
@@ -47,7 +47,8 @@
         <div class="close" onclick="closemodal()">+</div>
         <img class="circle_pic" src=/images/circlepic.jpg>
         <p>Try clicking on the planets!</p>
-        <p>Mercury : Secret?</p>
+        <p>Valentino Dore 2020 Portfolio</p>
+        <p>Mercury : My hometown.</p>
         <p>Venus : Past Work Experience.</p>
         <p>Earth : Favorite Pictures taken on Earth.</p>
         <p>Mars : Favorite Pictures taken of Space.</p>
@@ -127,6 +128,16 @@
           <input type="submit" />
         </form>
         <ul id="comment-list"></ul>
+      </div>
+    </div>
+    <div>
+      <img class="body" id="blackhole" src="/images/blackhole.png" onclick="open_translate()">
+    </div>
+    <div id="content" class="translate_modal">
+      <div class="translate_modal-content">
+        <div class="close" onclick="close_translate()">+</div>
+        <div id="google_translate_element"></div>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=translate"></script>
       </div>
     </div>
   </body>

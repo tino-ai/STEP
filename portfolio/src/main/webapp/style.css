@@ -6,6 +6,16 @@
   flex-grow: 1;
 }
 
+#text {
+    color: black;
+}
+
+#language {
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
 .modal {
   position: absolute; /* Stay in place */
   top: 0;
@@ -41,7 +51,7 @@
 /* Modal Content */
 .modal-content {
     width: 500px;
-    height: 410px;
+    height: 440px;
     background-color: white;
     border-radius: 4px;
     text-align: center;
@@ -127,8 +137,8 @@
 }
 
 .mercury_modal-content {
-    width: 500px;
-    height: 500px;
+    width: 525px;
+    height: 510px;
     background-color: white;
     border-radius: 4px;
     text-align: center;
@@ -469,6 +479,39 @@ h1 {
     cursor: pointer;
     top: 50px;
     left: 40px;
+}
+
+#blackhole {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px mediumpurple;
+    margin-top: -13.75px;
+    margin-left: 5.75px;
+    cursor: pointer;
+    bottom: 50px;
+    right: 40px;
+}
+
+.translate_modal {
+  position: absolute; /* Stay in place */
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  opacity: .8;
+  display: none;
+}
+
+.translate_modal-content {
+    width: 170px;
+    height: 35px;
+    background-color: white;
+    border-radius: 4px;
+    padding: 20px;
+    position: relative;
 }
 
 @-webkit-keyframes spin {
