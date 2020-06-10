@@ -23,7 +23,6 @@ public final class FindMeetingQuery {
     Collection<TimeRange> times = new ArrayList<TimeRange>();
     int beginning = TimeRange.START_OF_DAY;
     int end = TimeRange.END_OF_DAY;
-    boolean enough_time = false;
     TimeRange middle_current;
     TimeRange middle_past = TimeRange.fromStartDuration(TimeRange.END_OF_DAY, 0);
     //check for primary edge cases of duration longer than one day
